@@ -15,7 +15,7 @@ def character_recog(image_path):
     cv2.imwrite("check.jpg", img)
     img_arr.append(img)
     img_arr = np.array(img_arr)
-    model = keras.models.load_model("lenetmodel")
+    model = keras.models.load_model("nmodelgi0")
     result = model.predict(img_arr)
     return str(int(np.argmax(result[0])))
 
