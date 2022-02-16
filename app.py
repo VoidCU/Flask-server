@@ -1,4 +1,4 @@
-from flask import Flask, Response, request, jsonify, redirect, url_for
+from flask import Flask, request, jsonify
 import cv2
 import numpy as np
 import keras
@@ -25,10 +25,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
 def loadImage():
-    if request.method == 'POST':
-        temp_file = request.files['image']
-        temp_file.save("new.jpg")
-        return jsonify({'message': character_recog(temp_file.filename)})
+    temp_file = request.files['image']
+    temp_file.save("new.jpg")
+    return jsonify({'message': character_recog(temp_file.filename)})
 
 
 if __name__ == "__main__":
