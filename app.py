@@ -1,5 +1,4 @@
-from flask import Flask, Response, request, jsonify, redirect, url_for
-import cv2
+from flask import Flask, request, jsonify
 import numpy as np
 import keras
 from PIL import Image, ImageOps
@@ -17,7 +16,12 @@ def character_recog(gray):
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/')
+def home():
+    return "lol"
+
+
+@app.route('/predict/', methods=['POST'])
 def loadImage():
     img = Image.open(request.files['image'])
     newsize = (32, 32)
