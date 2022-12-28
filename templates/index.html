@@ -7,21 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/index.css">
     <title>Minor Project</title>
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+    ></script>
+    <script
+      class="jsbin"
+      src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"
+    ></script>
 </head>
 <body>
 
-
-
+    <br>
+    <h1><center>||Handwritten Devnagari Character Recognition||</center></h1>
+    <hr>
     <form class="box" action="/check" method="post" enctype="multipart/form-data">
-        <label>Select Image File:</label>
-        <input type="file" name="image" id="image" value="upload">
-        <input type="submit" name="submit" value="Predict">
-        <center>
+        <label id="text">Select Image File:</label>
+        <div id="imagehere">
+            <img id="blah" src="./static/aa.jpg" alt="your image"></img>
+            <div></div>
+            <input type="file" name="image" id="image" value="upload" onchange="readURL(this);">
+        </div>
+        <br>
+
+        <input id="submitbtn" type="submit" name="submit" value="Predict">
+        <center id="ans">
             {% if predict %}
-            <h3>{{predict}}</h3>
+            <h1>{{predict}}</h1>
             {% endif %}
         </center>
     </form>
-    
+    <script src="../static/app.js"></script>
 </body>
 </html>

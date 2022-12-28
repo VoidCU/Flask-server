@@ -1,5 +1,51 @@
-* {
+body{
   margin: 0;
   padding: 0;
-  background: rgb(159, 199, 231);
+  height: 100vh;
+  background-image: linear-gradient(rgb(134, 178, 205), rgb(112, 109, 109));
+  align-items: center;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top:10vh ;
+  margin-left: 35vw;
+  width: 50vh;
+  height: 55vh;
+  align-items: center;
+}
+#imagehere{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  height:60%;
+  padding: 10px;
+  justify-content: space-between;
+
+}
+
+#submitbtn{
+  background: rgb(112, 83, 83);
+  color: rgb(255, 255, 255);
+  width: 5em;
+  padding: 5px;
+  border-radius: 2.5em;
+}
+
+#submitbtn:hover{
+  background-color: rgb(124, 75, 204);
+  color: black;
+  font-size: large;
+}
+
+#ans{
+  color: white;
+}
+
+img{
+  border: 2px purple solid;
+  width: 250px;
+  height:250px;
 }
